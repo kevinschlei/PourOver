@@ -1,0 +1,36 @@
+let <#kControllerName#> = "<#kControllerKeyPath#>"
+
+class <#Name#>: PSControllerUpdating {
+
+//===================================================================================
+//MARK: Properties
+//===================================================================================
+
+//===================================================================================
+//MARK: Initialization
+//===================================================================================
+
+deinit {
+endUpdating()
+}
+
+//===================================================================================
+//MARK: PSControllerUpdating
+//===================================================================================
+
+static var controllers: [String : PSController] = [
+<#kControllerName#> : PSController(name: <#kControllerName#>, min: <#T##Double#>, max: <#T##Double#>)
+]
+
+static var requiresTimer: Bool = <#requiresTimer#>
+
+func update() {
+}
+
+func beginUpdating() {
+}
+
+func endUpdating() {
+}
+
+}

@@ -1,0 +1,95 @@
+PourOver
+
+*******************************
+NEXT UP
+- check deinit for deallocating everything (memory leaking)
+- way to set range from outside the framework / generator? like POPedometerGenerator.setRange(range forController: controller)
+- only continue playing in background if playing
+- settings
+    - toggle debug text
+    - list of available controllers
+*******************************
+
+*******************************
+INTERFACE
+- watch documents directory for updates
+*******************************
+
+*******************************
+IMPLEMENTATION
+
+dropbox file sync
+- if no .pd files present, alert, no download, clear folder, pop view controller
+
+what about: if a particular file (permission file) exists in a user's shared dropbox folder, then we provide a download button that copies the files to the documents directory. otherwise the sync'd files from dropbox go into caches where they're slightly less accessible
+
+iterating pd patch build
+loading options
+    1. drag into itunes (no)
+    2. dropbox
+user load action checks modification date against server version modification date
+autodisplay updated date to assure user it's the latest version?
+
+update timer patchmaker preference per file
+(ms)
+//UPDATEINTERVAL:16.6
+//UPDATEINTERVAL:5000
+
+//AVAILABLEMODES:kFishing, kSnowmobile, kAll
+
+if DURATIONMODE is missing, but [psr clock] exists
+fixed
+//DURATIONMODE:kFixed / kUser / kInfinite
+(minutes, default is 5)
+//DEFAULTDURATION:5
+
+[psr clock 0 M_PI]
+[psr clockStopped 0 M_PI]
+
+dynamically loading generators
+pre-load:
+    1. instantiate one of every possible generator via...
+    2. POControllerCoordinator.registerGeneratorType(type: POControllerUpdating.Type)
+order of load:
+    1. begin load pd patch
+    2. all [psr] report
+    3. finished loading pd patch
+    4. check for needed generators (app side)
+    5. initialize necessary generators with delegate method generatorForType:(type: POControllerUpdating.Type) -> POControllerUpdating?
+        - first, run generatorForType on framework to get the built in. if returns nil...
+        - run generatorForType on controllerUpdatingDelegate
+        - add results to activeGenerators / timedUpdateGenerators
+    6. begin!
+
+controllers supporting list output
+    - the first n values whatever they want (touch index, voice, etc.)
+    - only the last value is the mapped from normalized value
+
+controller filtering
+    - quantize
+
+controller visuals
+    - opt in
+    - where is data sent
+
+extra-pd audio fade out triggered by end of piece (clockStopped)
+
+
+*******************************
+
+
+*******************************
+SWIFT PROTOCOL WISHLIST
+
+use Protocol.Type as a key for dictionary (not hashable)
+set of Protocol (not hashable)
+
+*******************************
+
+
+*******************************
+DISTRIBUTION CHECKLIST
+
+provide Generator code snippet
+
+*******************************

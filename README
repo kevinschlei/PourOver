@@ -1,0 +1,29 @@
+//===================================================================================
+// README
+//===================================================================================
+
+
+To complete setup of the PourOver project...
+
+
+CocoaPods
+----------------------------------------
+1. Run the CocoaPods install in the project folder.
+2. To install CocoaPods on your Mac, see https://guides.cocoapods.org/using/getting-started.html
+3. To run the installation, open the Terminal, 'cd' to the project directory (containing PourOver.xcodeproj), and run 'pod install'
+----------------------------------------
+
+
+libpd
+----------------------------------------
+1. Add libpd via GitHub to the xcworkspace. Do not use CocoaPods, since the Google Drive pod requires use_frameworks!, which is incompatible with the libpd pod.
+2. For installation instructions, see https://github.com/libpd/libpd
+----------------------------------------
+
+
+[psr]
+----------------------------------------
+1. Copy the 'x_psr.c' file into the libpd project
+2. Follow the instructions at the top of 'x_psr.c' to complete the installation of the external
+----------------------------------------
+
