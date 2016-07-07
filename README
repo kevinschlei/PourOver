@@ -18,6 +18,7 @@ libpd
 ----------------------------------------
 1. Add libpd via GitHub to the xcworkspace. Do not use CocoaPods, since the Google Drive pod requires use_frameworks!, which is incompatible with the libpd pod.
 2. For installation instructions, see https://github.com/libpd/libpd
+3. If the linker fails to find 'PdAudioController.h', be sure to add the libpd directory (recursively) to PourOver >> Build Settings >> User Header Search Paths
 ----------------------------------------
 
 
